@@ -1,0 +1,76 @@
+body {
+  background-color: #1A1A1D;
+  background-image: url(".\\images\\background2.jpg");
+}
+h1 {
+  color: #C3073F;
+  text-align: center;
+  font-family: "Courier"
+  font-size: large
+
+}
+input {
+  border-radius: 5px;
+}
+#form {
+  align-content: space-around;
+  align-items: flex-start;
+  padding-left: 8rem;
+}
+#movie_ouput {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-around;
+}
+#movie_ouput .card {
+  flex-basis: 100%;
+  flex-grow: 1;
+  margin: auto;
+  margin: 1em;
+  border-radius: 10px;
+}
+.indvPage{
+  font-family: "cursive";
+}
+
+
+.mov-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.btn {
+  color: #FFFFFF;
+}
+.btn-primary{
+  background-color: #FFFFFF;
+}
+.filter-text {
+  color: #ffffff;
+}
+
+.filterInput {
+  margin-right: 7rem;
+  float: right;
+}
+.buttons {
+  display: none;
+}
+.indv {
+  display: inline-flex;
+
+
+}
+.indv-page-col {
+  flex-direction: row;
+  padding-bottom: 8em;
+  padding-left: 4rem;
+  padding-top: 8rem;
+}
+
+.detailDiv
+{
+  padding-top: 12rem;
+}
