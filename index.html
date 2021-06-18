@@ -11,59 +11,12 @@
   </head>
 
   <body>
-    <h1>Welcome to Movie Searcher!</h1>
 
+    <div class="main">
 
-
-    <div id="form">
-      <span id = "searchid" class="searchInput">
-        <input id="query" name="q" placeholder="Search..." aria-label="Search through site content">
-        <button class="btn btn-danger" id='search-button'>Search</button>
-      </span>
-
-      <span id = "filter" class="filterInput">
-        <span class="filter-text">Filter By Year:</span>
-        <input  id="start-date" placeholder="Enter Start Year" aria-label="filter by date">
-        <input  id="end-date"  placeholder="Enter End Year" aria-label="filter by date">
-        <button class="btn btn-danger" id='filterButton'type="button">Filter</button>
-        <input type="hidden" id="counter"/>
-      </span>
-
+      <h1>Welcome to Movie Searcher!</h1>
+      <a class="btn btn-danger" id="welcome" href=".\\searcher.html" >Search Movies!</a>
     </div>
-
-
-
-    <div class="container">
-
-
-      <div class="error" type="hidden" style="display:none;">
-        <p style="color:white;">Too many results. Please try a more specific title</p>
-      </div>
-
-    <div class="search-results">
-      <div id="movie_ouput" class="row"></div>
-
-      <div class="buttons">
-        <button class="btn btn-danger" id='nextPageButton'type="button">Next Page</button>
-        <input type="hidden" id="counter"/>
-
-        <button class="btn btn-danger" id='previousPageButton'type="button">Previous Page</button>
-        <input type="hidden" id="counter"/>
-
-        <button class="btn btn-danger" id='showMoreButton'type="button">Show more Movies</button>
-        <input type="hidden" id="counter"/>
-
-        <button class="btn btn-danger" id='showAllButton'type="button">Show All</button>
-        <input type="hidden" id="counter"/>
-
-
-      </div>
-    </div>
-    <div class="indv">
-    </div>
-
-
-
     <script src="main.js"></script>
 
   </body>
