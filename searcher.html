@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+    <meta name="viewport" content="width=device-width">
+    <meta name="author" content="Tarini Srikanth">
+    <title>Movie Search Tool</title>
+  </head>
+
+  <body>
+
+    <div class="main">
+
+      <h1>Welcome to Movie Searcher!</h1>
+
+
+
+      <div id="form">
+        <span id = "searchid" class="searchInput">
+          <input id="query" name="q" placeholder="Search..." aria-label="Search through site content">
+          <button class="btn btn-danger" id='search-button'>Search</button>
+        </span>
+
+        <span id = "filter" class="filterInput">
+          <span class="filter-text">Filter By Year:</span>
+          <input  id="start-date" placeholder="Enter Start Year" aria-label="filter by date">
+          <input  id="end-date"  placeholder="Enter End Year" aria-label="filter by date">
+          <button class="btn btn-danger" id='filterButton'type="button">Filter</button>
+          <input type="hidden" id="counter"/>
+        </span>
+
+      </div>
+
+
+
+      <div class="container">
+
+
+        <div class="error" type="hidden" style="display:none;">
+          <p style="color:white;">Too many results. Please try a more specific title</p>
+        </div>
+
+      <div class="search-results">
+        <div id="movie_ouput" class="row"></div>
+
+        <div class="buttons">
+          <button class="btn btn-danger" id='nextPageButton'type="button">Next Page</button>
+          <input type="hidden" id="counter"/>
+
+          <button class="btn btn-danger" id='previousPageButton'type="button">Previous Page</button>
+          <input type="hidden" id="counter"/>
+
+          <button class="btn btn-danger" id='showMoreButton'type="button">Show more Movies</button>
+          <input type="hidden" id="counter"/>
+
+          <button class="btn btn-danger" id='showAllButton'type="button">Show All</button>
+          <input type="hidden" id="counter"/>
+
+
+        </div>
+      </div>
+      <div class="indv">
+      </div>
+
+
+    </div>
+    <script src="main.js"></script>
+
+  </body>
+</html>
