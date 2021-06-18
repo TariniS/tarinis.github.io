@@ -59,9 +59,6 @@ function apiCall(title,index)
 
     console.log(endYear);
 
-    if(parseInt(movie.Year, 10) >= parseInt(startYear, 10) && parseInt(movie.Year, 10) <= parseInt(endYear, 10)) {
-
-
     //movieOut1.classList.add("w-200");
     let movieOut1 = document.createElement('div');
     movieOut1.classList.add("col-md-2");
@@ -75,7 +72,10 @@ function apiCall(title,index)
     {
       movieOut1Img.src = ".\\images\\no-poster-available.jpg"
     }
-    else
+    else if(parseInt(movie.Year, 10) >= parseInt(startYear, 10) && parseInt(movie.Year, 10) <= parseInt(endYear, 10)) {
+      movieOut1Img.src = ".\\images\\no-poster-available.jpg"
+    }
+    else 
     {
       movieOut1Img.src = movie.Poster;
     }
@@ -110,7 +110,7 @@ function apiCall(title,index)
 
 
     movieOut.appendChild(movieOut1);
-  }
+  
 
   });
 
