@@ -72,12 +72,13 @@ function apiCall(title,index)
     {
       movieOut1Img.src = ".\\images\\no-poster-available.jpg"
     }
-    else if(parseInt(movie.Year, 10) < parseInt(startYear, 10) && parseInt(movie.Year, 10) > parseInt(endYear, 10)) {
-      movieOut1Img.src = ".\\images\\no-poster-available.jpg"
-    }
     else 
     {
       movieOut1Img.src = movie.Poster;
+    }
+      
+    if(parseInt(movie.Year, 10) < parseInt(startYear, 10) && parseInt(movie.Year, 10) > parseInt(endYear, 10)) {
+      movieOut1Img.src = ".\\images\\no-poster-available.jpg"
     }
     movieOut1Img.alt = movie.title;
 
@@ -101,6 +102,7 @@ function apiCall(title,index)
       //hideMovies();
 
     });
+    
 
     movieOut1.appendChild(movieOut1Img);
     movieOut1.appendChild(movieOut1Title);
