@@ -1,6 +1,7 @@
 let counter=1;
 let filterB = document.querySelector("#filter").style.display = "none";
 let showAllB = document.querySelector("#showAllButton").style.display = "none";
+let searchTerm = document.querySelector('#query').value;
 let errorMessageDiv = document.querySelector('.error');
 
 function apiCall(title,index)
@@ -248,7 +249,7 @@ function render(movieObject)
 
 var input = document.querySelector('#form');
 
-let searchTerm;
+
 input.addEventListener('change', function()
 {
      searchTerm = document.querySelector('#query').value;
@@ -309,6 +310,30 @@ filterButton.addEventListener('click', function()
     i=i+1;
   }
 });
+
+
+
+let resetButton = document.querySelector('#resetButton');
+let movie12 = document.querySelector("#movie_ouput");
+
+
+resetButton.addEventListener('click', function()
+{
+   let startYear1 = document.querySelector("#start-date");
+   let endYear1 = document.querySelector("#start-date");
+   startYear1.value="";
+   endYear1.value="";
+   movie12.innerHTML="";
+   index=1;
+   let i=0;
+   while(i<counter)
+   {
+     console.log(index+i);
+     apiCall(searchTerm,index+i);
+     i=i+1;
+   }
+ });
+
 
 var element = document.querySelector("#nextPageButton")
 element.addEventListener("click",()=>
