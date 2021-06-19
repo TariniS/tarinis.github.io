@@ -349,3 +349,4 @@ element.addEventListener("click",()=>
   apiCall(title,counter)
   //index=index-1
 });
+
