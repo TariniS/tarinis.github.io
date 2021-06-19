@@ -260,6 +260,7 @@ input.addEventListener('change', function()
 let searchButton = document.querySelector('#search-button');
 searchButton.addEventListener('click', function()
  {
+  counter=1;
   let filterB = document.querySelector("#filter").style.display = "block";
   index=1
   console.log("inside search button event listener");
@@ -289,6 +290,7 @@ let filterButton = document.querySelector('#filterButton');
 
 filterButton.addEventListener('click', function()
 {
+
   index=1
   console.log("inside search button event listener");
   console.log(searchTerm);
@@ -297,9 +299,14 @@ filterButton.addEventListener('click', function()
   let movieOut = document.querySelector('#movie_ouput');
   movieOut.innerHTML = "";
   //apiCall(searchTerm,index);
-  for(let i=0; i<counter; i++)
+
+  console.log(counter);
+  let i=0;
+  while(i<counter)
   {
+    console.log(index+i);
     apiCall(searchTerm, index+i);
+    i=i+1;
   }
 });
 
@@ -349,4 +356,3 @@ element.addEventListener("click",()=>
   apiCall(title,counter)
   //index=index-1
 });
-
