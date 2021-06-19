@@ -16,6 +16,14 @@ input {
   align-content: space-around;
   align-items: flex-start;
   padding-left: 8rem;
+
+}
+#query
+{
+  width: 500px;
+  height: 2.5rem;
+  margin-top: 20px;
+
 }
 #movie_ouput {
   display: inline-flex;
@@ -31,10 +39,47 @@ input {
   margin: 1em;
   border-radius: 10px;
 }
+#welcome
+{
+
+  margin: 40em;
+  margin-top: 2em;
+  margin-right: 30em;
+
+}
+
+
+
+
 .indvPage{
   font-family: "cursive";
 }
+.intro
+{
+    background-image: url(".\\images\\background4.jpg");
 
+}
+.main h1
+{
+  color: #dc3545;
+}
+
+
+.intro img
+{
+  width: 500px;
+  margin-top: -500px;
+  margin-left: -80px;
+}
+.intro h1 {
+  color: #FFFFFF;
+  padding-top: 12rem
+}
+.intro p
+{
+  color: #FFFFFF;
+  text-align: center;
+}
 
 .mov-container {
   width: 100%;
@@ -53,6 +98,7 @@ input {
 
 .filterInput {
   margin-right: 7rem;
+  margin-top: 2rem;
   float: right;
 }
 .buttons {
@@ -74,3 +120,4 @@ input {
 {
   padding-top: 12rem;
 }
+
