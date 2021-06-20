@@ -478,6 +478,8 @@ element3.addEventListener("click",() =>
 {
   var title = document.querySelector('#query').value;
   //calls the API again on index, until the page total results is reached. 
+  movie1 = document.querySelector("#movie_ouput");
+  movie1.innerHTML="";
   axios.get("https://www.omdbapi.com/?apikey=f1da2140&s="+title+"&page="+index)
   .then((response)=>
   {
