@@ -344,6 +344,7 @@ searchButton.addEventListener('click', function()
   counter=1; //each time a search is pressed, the counter/page should be set to 1. 
   
   //showing the filter button
+  let showAllB = document.querySelector("#showAllButton").style.display = "none"; 
   let filterB = document.querySelector("#filter").style.display = "block";
  
   index=1
