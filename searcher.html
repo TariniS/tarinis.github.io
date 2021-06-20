@@ -43,16 +43,20 @@
         <div class="error" type="hidden" style="display:none;">
           <p style="color:white;">Too many results. Please try a more specific title</p>
         </div>
+        <div class="error1" type="hidden" style="display:none;">
+          <p style="color:white;">Movie not Found! Please try again!</p>
+        </div>
 
       <div class="search-results">
         <div id="movie_ouput" class="row"></div>
 
         <div class="buttons">
+          <button class="btn btn-danger" id='previousPageButton'type="button">Previous Page</button>
+          <input type="hidden" id="counter"/>
           <button class="btn btn-danger" id='nextPageButton'type="button">Next Page</button>
           <input type="hidden" id="counter"/>
 
-          <button class="btn btn-danger" id='previousPageButton'type="button">Previous Page</button>
-          <input type="hidden" id="counter"/>
+
 
           <button class="btn btn-danger" id='showMoreButton'type="button">Show more Movies</button>
           <input type="hidden" id="counter"/>
