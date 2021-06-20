@@ -1,18 +1,21 @@
 let counter=1;
 let filterB = document.querySelector("#filter").style.display = "none";
+console.log("hiding show all button");
 let showAllB = document.querySelector("#showAllButton").style.display = "none";
 let searchTerm = document.querySelector('#query').value;
 let errorMessageDiv = document.querySelector('.error');
+let errorMessageDiv1 = document.querySelector('.error1');
 
 function apiCall(title,index)
 {
 
   errorMessageDiv.style.display="none"
+  errorMessageDiv1.style.display="none"
   axios.get("https://www.omdbapi.com/?apikey=f1da2140&s="+title+"&page="+index)
   .then((response)=>
   {
 
-    console.log(response);
+    //console.log(response);
 
 
     let movieArr = response.data.Search;
@@ -21,10 +24,21 @@ function apiCall(title,index)
 
     //showAll(response);
     let responseFail = response.data.Response;
+    let responseMessage = response.data.Error;
     if(responseFail!=="True")
     {
-      errorMessageDiv.style.display="block"
-      return;
+      if(responseMessage=="Too many results.")
+      {
+        errorMessageDiv.style.display="block"
+        return;
+      }
+      if(responseMessage=="Movie not found!")
+      {
+        errorMessageDiv1.style.display="block"
+        return;
+      }
+
+
 
     }
 
@@ -32,6 +46,7 @@ function apiCall(title,index)
     let totalResultsInt = parseInt(totalResults,10);
     if(totalResultsInt <50)
     {
+      console.log("showing show all button");
       let showAllB = document.querySelector("#showAllButton").style.display = "block";
     }
 
@@ -46,10 +61,10 @@ function apiCall(title,index)
     //   `;
 
     let startYear = document.querySelector("#start-date").value;
-    console.log(startYear);
+    //console.log(startYear);
 
     let endYear = document.querySelector("#end-date").value;
-    console.log(endYear);
+    //console.log(endYear);
 
     if (startYear === "") {
       startYear = 0;
@@ -58,7 +73,7 @@ function apiCall(title,index)
       endYear = 2025;
     }
 
-    console.log(endYear);
+    //console.log(endYear);
 
     if(parseInt(movie.Year, 10) >= parseInt(startYear, 10) && parseInt(movie.Year, 10) <= parseInt(endYear, 10)) {
 
@@ -141,7 +156,6 @@ function showAll(movieObject)
     apiCall(title, index);
     index=index+1;
   }
-  console.log("hi");
 
 
 
@@ -206,7 +220,7 @@ function render(movieObject)
    let plot = document.createElement("p");
    plot.style.color = "white";
    plot.textContent = "Plot: "+movieObject.data.Plot;
-   console.log(movieObject);
+   //console.log(movieObject);
 
    let backButton = document.createElement('button');
    backButton.href = "#";
@@ -253,8 +267,8 @@ var input = document.querySelector('#form');
 input.addEventListener('change', function()
 {
      searchTerm = document.querySelector('#query').value;
-     console.log("inside input event listener");
-     console.log(searchTerm);
+
+     //console.log(searchTerm);
 
 });
 
@@ -264,8 +278,8 @@ searchButton.addEventListener('click', function()
   counter=1;
   let filterB = document.querySelector("#filter").style.display = "block";
   index=1
-  console.log("inside search button event listener");
-  console.log(searchTerm);
+  //console.log("inside search button event listener");
+  //console.log(searchTerm);
   let buttons = document.querySelector('.buttons');
   buttons.style.display = 'block'
   let movieOut = document.querySelector('#movie_ouput');
@@ -293,19 +307,19 @@ filterButton.addEventListener('click', function()
 {
 
   index=1
-  console.log("inside search button event listener");
-  console.log(searchTerm);
+  //console.log("inside search button event listener");
+  //console.log(searchTerm);
   let buttons = document.querySelector('.buttons');
   buttons.style.display = 'block'
   let movieOut = document.querySelector('#movie_ouput');
   movieOut.innerHTML = "";
   //apiCall(searchTerm,index);
 
-  console.log(counter);
+  //console.log(counter);
   let i=0;
   while(i<counter)
   {
-    console.log(index+i);
+    //console.log(index+i);
     apiCall(searchTerm, index+i);
     i=i+1;
   }
@@ -328,7 +342,7 @@ resetButton.addEventListener('click', function()
    let i=0;
    while(i<counter)
    {
-     console.log(index+i);
+     //console.log(index+i);
      apiCall(searchTerm,index+i);
      i=i+1;
    }
@@ -368,7 +382,10 @@ element3.addEventListener("click",() =>
   .then((response)=>
   {
     showAll(response);
+
   })
+  console.log("hiding show all button");
+  element3.style.display="none";
 });
 
 var element = document.querySelector("#showMoreButton")
@@ -377,7 +394,7 @@ element.addEventListener("click",()=>
   counter=counter+1;
   var title = document.querySelector('#query').value;
   //index=index+1
-  console.log(counter);
+  //console.log(counter);
   apiCall(title,counter)
   //index=index-1
 });
