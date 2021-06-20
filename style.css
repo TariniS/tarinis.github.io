@@ -1,7 +1,13 @@
+/* Author: Tarini Srikanth
+Project: MindSumo Capital One Movie Searcher
+Program: Main CSS File */
+
+/* Sets the background color and image */
 body {
   background-color: #1A1A1D;
   background-image: url(".\\images\\background2.jpg");
 }
+/* Sets the color, font, and alignment for the title */
 h1 {
   color: #C3073F;
   text-align: center;
@@ -9,9 +15,12 @@ h1 {
   font-size: large
 
 }
+
 input {
   border-radius: 5px;
 }
+
+/* sets the styling for the search bar input form */
 #form {
   align-content: space-around;
   align-items: flex-start;
@@ -25,6 +34,8 @@ input {
   margin-top: 20px;
 
 }
+
+/* sets the styling for the movie output and cards, implementing flexbot */
 #movie_ouput {
   display: inline-flex;
   flex-direction: row;
@@ -39,6 +50,8 @@ input {
   margin: 1em;
   border-radius: 10px;
 }
+
+/* sets the styling for the welcome home page */
 #welcome
 {
 
@@ -64,7 +77,8 @@ input {
   color: #dc3545;
 }
 
-
+/* 
+syling for the image in the welcome page */
 .intro img
 {
   width: 500px;
@@ -81,17 +95,23 @@ input {
   text-align: center;
 }
 
+
+/* stlying for the movie container */
 .mov-container {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
 }
+
+/* sets the button colors */
 .btn {
   color: #FFFFFF;
 }
 .btn-primary{
   background-color: #FFFFFF;
 }
+
+/* styling for the filter input */
 .filter-text {
   color: #ffffff;
 }
@@ -104,6 +124,9 @@ input {
 .buttons {
   display: none;
 }
+
+
+/* styling for the individual page  */
 .indv {
   display: inline-flex;
 
