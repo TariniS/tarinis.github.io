@@ -419,7 +419,7 @@ resetButton.addEventListener('click', function()
   
    //setting the start and end year to none
    let startYear1 = document.querySelector("#start-date");
-   let endYear1 = document.querySelector("#start-date");
+   let endYear1 = document.querySelector("#end-date");
    startYear1.value="";
    endYear1.value="";
   
