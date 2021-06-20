@@ -1,12 +1,18 @@
+<!-- Author: Tarini Srikanth
+Program: MindSumo Capital One Movie Searcher
+Peoject: html page for movie searching page -->
 <!DOCTYPE html>
 <html>
   <head>
+    
+<!--     implementing the required scripts to use jQuery, Axios -->
     <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="./style.css">
     <meta name="viewport" content="width=device-width">
     <meta name="author" content="Tarini Srikanth">
+    
     <title>Movie Search Tool</title>
   </head>
 
@@ -17,13 +23,14 @@
       <h1></h1>
 
 
-
+<!--       Div for the search bar, search button, input form -->
       <div id="form">
         <span id = "searchid" class="searchInput">
           <input id="query" name="q" placeholder="Search..." aria-label="Search through site content">
           <button class="btn btn-danger" id='search-button'>Search</button>
         </span>
-
+      
+<!--         Span for the filter button, the two filter inputs(start and end year), and the reset button -->
         <span id = "filter" class="filterInput">
           <span class="filter-text">Filter By Year:</span>
           <input  id="start-date" placeholder="Enter Start Year" aria-label="filter by date">
@@ -39,6 +46,7 @@
 
       <div class="container">
 
+<!--         divs for the two error handling messages -->
 
         <div class="error" type="hidden" style="display:none;">
           <p style="color:white;">Too many results. Please try a more specific title</p>
@@ -47,6 +55,8 @@
           <p style="color:white;">Movie not Found! Please try again!</p>
         </div>
 
+       
+<!--         divs for the buttons at the bottom (previous, next, show More) -->
       <div class="search-results">
         <div id="movie_ouput" class="row"></div>
 
